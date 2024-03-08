@@ -1,16 +1,27 @@
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.HttpURLConnection;
 public class Actors {
-    public static final String API_KEY = "Your API_KEY";   // TODO --> add your api key about Actors here
+    public static final String API_KEY = "zu0ZwSh9rXGbAypL7GqrUm13AeCT7Z4vR7czrOFj";
     String netWorth;
     Boolean isAlive;
+    String gender;
+    Double height;
 
     public Actors(String netWorth, boolean isAlive){
-        //TODO --> (Write a proper constructor using the get_from_api functions)
+        this.netWorth = netWorth;
+        this.isAlive = isAlive;
     }
+
+    public Actors(String title) { // new Constructor
+
+    }
+
     @SuppressWarnings({"deprecation"})
     /**
      * Retrieves data for the specified actor.
@@ -43,22 +54,47 @@ public class Actors {
             return null;
         }
     }
+
     public double getNetWorthViaApi(String actorsInfoJson){
-        //TODO --> (This function must return the "NetWorth")
+        JSONArray jsonArray = new JSONArray(actorsInfoJson);
+        JSONObject jsonObject = new JSONObject(jsonArray.getJSONObject(0));
         double result = 0.0;
+        result = jsonArray.getJSONObject(0).getDouble("net_worth");
+
         return result;
     }
 
     public boolean isAlive(String actorsInfoJson){
-        //TODO --> (If your chosen actor is alive it must return true otherwise it must return false)
+        JSONArray jsonArray = new JSONArray(actorsInfoJson);
+        JSONObject jsonObject = new JSONObject(jsonArray.getJSONObject(0));
         boolean statues = false;
+        statues = jsonArray.getJSONObject(0).getBoolean("is_alive");
+
         return statues;
     }
 
     public String getDateOfDeathViaApi(String actorsInfoJson){
-        //TODO --> (If your chosen actor is deceased it must return the date of death)  -->
+        JSONArray jsonArray = new JSONArray(actorsInfoJson);
+        JSONObject jsonObject = new JSONObject(jsonArray.getJSONObject(0));
         String date = "";
+        date = jsonArray.getJSONObject(0).getString("death");
         return date;
+    }
+
+    public String getGender(String actorsInfoJson) {
+        JSONArray jsonArray = new JSONArray(actorsInfoJson);
+        JSONObject jsonObject = new JSONObject(jsonArray.getJSONObject(0));
+        String result = jsonArray.getJSONObject(0).getString("gender");
+        return result;
+    }
+
+    public double getHeight(String actorsInfoJson) {
+        JSONArray jsonArray = new JSONArray(actorsInfoJson);
+        JSONObject jsonObject = new JSONObject(jsonArray.getJSONObject(0));
+        double result = 0.0;
+        result = jsonArray.getJSONObject(0).getDouble("height");
+
+        return result;
     }
 
 }
