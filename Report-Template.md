@@ -1,56 +1,71 @@
 # Project Title
 
-Simple overview of use/purpose.
+Getting Information Of Actors & Movies With API
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+In This Project You Can Understand About Some Thing About Your Favorite Actor/Actress Or Movie/Series.
+Thing Like Gender, Height, Date_OF_deth For Actors 
+And Thing Like Language, Year, IMDB_Rate For Movies
 
 ## Getting Started
 
+It Must Getting Started With Getting API_Key In  https://omdbapi.com And https://api-ninjas.com/api/celebrity
+
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+To Run This Program You Should Have Some Thing In Your Device:
+1. Gradle 8.6 Version And org.json Library (You can get it with add a Command in Build.gradle File)
+3. JDK is The most important thing to run this program
+2. You Should have List and ArrayList library
+3. Pattern & Matcher from regex Library
+4. You Should have java.net & java.io Libraries to use URL
 
 ### Installing
 
 * How/where to download your program
-* Any modifications needed to be made to files/folders
+You Can Download My Program In Github 
+you should download all Folders Except Test Folder
+
+You Should not do any modifictions in files to use the program
 
 ### Executing program
 
 * How to run the program
 * Step-by-step bullets
-```
-code blocks for commands
-```
+To Run The Program:
+1. Download All Files and Folders in the same shape as in my github
+2. go to src -> main -> java
+3. open CMD Or Terminal(For Windows)
+4. Write : javac Main.java
+5. Write : java Main
+6. Enjoy The Program
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+The Biggest Problem that may happen is that the website cannot found Your Actor or Movie
+And there is no solotion for it
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Me : The Only Contributor
+AmirAli Nasiri 
+Github --> https://github.com/amirnasiri23
 
 ## Version History
 
+* 0.4
+    * Complete Main Class
+* 0.3
+    * Complete Actors & Movie Classes
 * 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
+    * Fix API_KEY problem
 * 0.1
     * Initial Release
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the [AmirAli Nasiri] License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
